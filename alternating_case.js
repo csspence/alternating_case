@@ -16,6 +16,23 @@ As usual, your function/method should be pure, i.e. it should not mutate the ori
 
 */
 
-String.prototype.toAlternatingCase = function () {
-  // Define your method here :)
+String.prototype.toAlternatingCase = () => {
+  let newString = '';
+  for(let i = 0; i < this.length; i++) {
+    console.log('you are inside the for loop');
+    if(this[i] === this[i].toUpperCase()) {
+      newString = newString + this[i].toLowerCase();
+      console.log(newString);
+      continue;
+    } 
+    if(this[i] === this[i].toLowerCase()) {
+      newString = newString + this[i].toUpperCase();
+      console.log(newString);
+      continue;
+    }
+    newString = newString + this[i];
+    console.log(newString);
+  }
+
+  return newString;
 }
